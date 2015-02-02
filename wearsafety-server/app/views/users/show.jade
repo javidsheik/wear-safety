@@ -1,0 +1,31 @@
+extends ../layouts/dashboard
+
+block main
+  include ../includes/module 
+  mixin module('dashboard')
+  header.header.black-bg
+    .sidebar-toggle-box
+      .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+    a.logo(href='/dashboard')
+      b SAFETY
+    #top_menu.nav.notify-row
+      // notification start
+      ul.nav.top-menu
+    .top-menu
+      ul.nav.pull-right.top-menu
+        li
+          a.logout(href='/logout') Logout
+  include ../includes/nav
+  mixin nav('/dashboard')  
+  section#main-content
+    section.wrapper
+      .row.mt
+        .col-lg-12
+          .col-lg-6
+            select#circle_list.form-control
+              option Select Circle
+        .col-lg-12
+          div.form-panel
+            div#mapdiv
+          
+  // main content end

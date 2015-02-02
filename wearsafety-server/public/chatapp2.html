@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Express</title>
+</head>
+<body>
+<h3>Hello Express</h3>
+
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3001');
+  socket.on('Connection', function (data) {
+    console.log(data);
+    socket.emit('message', { my: 'data' });
+  });
+</script>
+</body>
+</html> 
